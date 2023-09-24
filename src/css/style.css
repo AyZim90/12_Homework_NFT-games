@@ -1,0 +1,311 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* header style */
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 0;
+}
+.header .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .header-container .logo img {
+  max-width: 140px;
+}
+.header .header-container .menu ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.header .header-container .menu ul .menu-item {
+  position: relative;
+  margin-right: 20px;
+}
+.header .header-container .menu ul .menu-item a {
+  text-decoration: none;
+  color: #fff;
+}
+.header .header-container .menu ul .menu-item a:hover {
+  color: #45F882;
+}
+.header .header-container .menu ul .menu-item .sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  width: 150px;
+  padding: 10px 0;
+  z-index: 1;
+}
+.header .header-container .menu ul .menu-item .sub-menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 20px;
+  display: block;
+}
+.header .header-container .menu ul .menu-item .sub-menu a:hover {
+  background-color: #45F882;
+}
+.header .header-container .menu ul .menu-item:hover .sub-menu {
+  display: block;
+}
+
+.header-btn {
+  display: inline-flex;
+  text-transform: uppercase;
+  overflow: hidden;
+  justify-content: center;
+  background-image: url(/src/img/Без\ названия.svg);
+  background-color: transparent;
+  background-repeat: round;
+  background-size: 170px;
+  min-width: 120px;
+  height: 52px;
+}
+
+.hexagon {
+  margin-top: 5.5px;
+}
+
+.hexagon .l {
+  border-color: transparent #333 transparent transparent;
+  border-style: solid;
+  border-width: 20px 20px 20px 20px;
+  display: block;
+  float: left;
+  height: 0;
+  width: 0;
+}
+
+.hexagon .r {
+  border-color: transparent transparent transparent #333;
+  border-style: solid;
+  border-width: 20px 20px 20px 20px;
+  display: block;
+  float: right;
+  height: 0;
+  width: 0;
+}
+
+.hexagon .center {
+  background: #333;
+  border: 0;
+  color: #fff;
+  display: block;
+  float: left;
+  font-size: 17px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  width: 106px;
+}
+
+.hexagon:hover .l {
+  border-right-color: #45F882;
+}
+
+.hexagon:hover .r {
+  border-left-color: #45F882;
+}
+
+.hexagon:hover .center {
+  background: #45F882;
+}
+
+.icons i {
+  color: #fff;
+}
+
+body {
+  background-image: url("/src/img/bg/breadcrumb_bg01.jpg"); /* Замените 'your-background-image.jpg' на путь к вашему фоновому изображению */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-column {
+  padding: 20px;
+  text-align: left;
+  margin-top: 80px;
+  margin-left: 60px;
+}
+
+.background {
+  position: relative;
+  width: 70%; /* Ширина блока с фоновым изображением */
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%; /* Ширина блока с дополнительным изображением */
+  height: 100%;
+  background-image: url("/src/img/others/breadcrumb_img01.png"); /* Замените 'your-overlay-image.png' на путь к вашему дополнительному изображению */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center right;
+  margin-top: 140px;
+  margin-right: 60px;
+}
+
+#overlay.hovered {
+  transform: scale(1.2); /* Увеличиваем изображение при наведении */
+  transition: transform 0.5s ease-in-out;
+}
+
+#menu-hamburger {
+  display: flex;
+  justify-content: right; /* Измените на right, чтобы поместить меню справа */
+  align-items: flex-start;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-toggle {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+#menu-hamburger.menu-open .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+#menu-hamburger.menu-open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-hamburger.menu-open .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.menu-content {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #333;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  z-index: 2; /* Установите значение z-index на большее число, например, 2 */
+}
+
+#menu-hamburger.menu-open .menu-content {
+  margin-top: 40px;
+  width: 400px;
+  height: 400px;
+}
+
+.menu-content p {
+  color: #fff;
+  padding: 10px 20px; /* Добавлен отступ вокруг текста */
+  margin: 0;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-text {
+  margin: 0 0 19px;
+  line-height: 1;
+  font-family: var(--tg-body-font-family);
+  font-weight: var(--tg-fw-bold);
+  letter-spacing: 4px;
+  font-size: 15px;
+  color: #fff;
+  position: relative;
+  padding: 17px 0 17px 20px;
+}
+
+.text::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url(/src/img/text_gradient_bg.png);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.28;
+}
+
+.text-big {
+  margin-top: 70px;
+  margin-left: 20px;
+  position: absolute;
+  left: 50px; /* Отступ слева */
+  top: 50%; /* Разместить по вертикали по середине */
+  transform: translateY(-50%); /* Выровнять по вертикали по середине */
+}
+
+.large-bold-italic-shadow-text {
+  font-family: "Croissant One", cursive;
+  font-size: 50px;
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+  text-shadow: 4px 4px 4px #45F882;
+}
+
+.text-m {
+  margin-top: 140px;
+  margin-left: 20px;
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.text-m h4 {
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: 0.1rem;
+  transition: color 0.3s; /* Добавляем анимацию для смены цвета */
+}
+
+.text-m h4:hover {
+  color: orange; /* Цвет шрифта при наведении */
+}
+
+.cursor {
+  width: 10px;
+  height: 10px;
+  background-color: #44F881;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none; /* Fare imleci üzerindeki tıklamaları engeller */
+}/*# sourceMappingURL=style.css.map */

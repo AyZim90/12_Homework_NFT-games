@@ -1,4 +1,4 @@
-const overlay = document.getElementById('overlay');
+const overlay = document.querySelector('.image-overlay');
 
     overlay.addEventListener('mouseenter', () => {
         // Добавляем класс "hovered" для применения стилей при наведении

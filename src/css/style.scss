@@ -5,6 +5,14 @@
 }
 a {
     text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: 'Barlow', sans-serif;
+}
+body {
+      font-family: 'Barlow', sans-serif;
 }
 /* header style */
 .header {
@@ -16,6 +24,7 @@ a {
         justify-content: space-between;
         align-items: center;
         .logo {
+            padding-left: 10px;
             img {
                 max-width: 140px;
             }
@@ -71,7 +80,7 @@ display: inline-flex;
 text-transform: uppercase;
 overflow: hidden;
 justify-content: center;
-background-image: url(/src/img/Без\ названия.svg);
+background-image: url(/src/img/images/svg/Без\ названия.svg);
 background-color: transparent;
 background-repeat: round;
 background-size: 170px;
@@ -129,43 +138,77 @@ height: 52px;
     color: #fff;
 }
 body {
-    background-image: url('/src/img/bg/breadcrumb_bg01.jpg'); /* Замените 'your-background-image.jpg' на путь к вашему фоновому изображению */
+    background-image: url('/src/img/bg/breadcrumb_bg01.jpg'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: Arial, sans-serif;
+    font-family: 'Barlow', sans-serif;
 }
+//о нас
 .container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
 .left-column {
-    padding: 20px;
+    padding: 37px;
     text-align: left;
     margin-top: 80px;
     margin-left: 60px;
 }
+.text-big {
+    font-size: 50px;
+    letter-spacing: 2px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 800;
+    color: white;
+    margin-top: 70px;
+    position: absolute;
+    transform: translateY(-50%); /* Выровнять по вертикали по середине */
+}
+.text-m {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.text-m h4 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 800;
+    color: white;
+    margin-top: 70px;
+    position: absolute;
+    transform: translateY(-50%); /* Выровнять по вертикали по середине */
+}
+.text-m h4:hover {
+    color: orange; /* Цвет шрифта при наведении */
+}
 .background {
     position: relative;
-    width: 70%; /* Ширина блока с фоновым изображением */
+    width: 80%; /* Ширина блока с фоновым изображением */
+    
 }
 .image-overlay {
     position: absolute;
     top: 0;
     right: 0;
-    width: 30%; /* Ширина блока с дополнительным изображением */
-    height: 100%;
+    left: 378.975px;
+    top: 86.5px;
+    width: 40%; /* Ширина блока с дополнительным изображением */
+    height: 200%;
     background-image: url('/src/img/others/breadcrumb_img01.png'); /* Замените 'your-overlay-image.png' на путь к вашему дополнительному изображению */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center right;
-    margin-top: 140px;
+ 
     margin-right: 60px;
 }
 #overlay.hovered {
     transform: scale(1.2); /* Увеличиваем изображение при наведении */
     transition: transform 0.5s ease-in-out;
 }
+
 //меню тоггл
 #menu-hamburger {
     display: flex;
@@ -228,69 +271,6 @@ body {
     margin: 0;
     text-align: left;
     font-weight: bold;
-}
-
-//о нас
-.content-text {
-    margin: 0 0 19px;
-    line-height: 1;
-    font-family: var(--tg-body-font-family);
-    font-weight: var(--tg-fw-bold);
-    letter-spacing: 4px;
-    font-size: 15px;
-    color: #fff;
-    position: relative;
-    padding: 17px 0 17px 20px;
-}
-.text::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-image: url(/src/img/text_gradient_bg.png);
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    z-index: -1;
-    opacity: 0.28;
-}
-
-
-.text-big {
-    margin-top: 70px;
-    margin-left: 20px;
-    position: absolute;
-    left: 50px; /* Отступ слева */
-    top: 50%; /* Разместить по вертикали по середине */
-    transform: translateY(-50%); /* Выровнять по вертикали по середине */
-}
-
-.large-bold-italic-shadow-text {
-    font-family: 'Croissant One', cursive;
-    font-size: 50px; 
-    font-weight: bold;
-    font-style: italic; 
-    color:white; 
-    text-shadow: 4px 4px 4px #45F882; 
-}
-.text-m {
-    margin-top: 140px;
-    margin-left: 20px;
-    position: absolute;
-    left: 50px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.text-m h4 {
-    font-size: 18px;
-    color: #fff;
-    letter-spacing: 0.1rem;
-    transition: color 0.3s; /* Добавляем анимацию для смены цвета */
-}
-
-.text-m h4:hover {
-    color: orange; /* Цвет шрифта при наведении */
 }
 .cursor {
     width: 10px;
